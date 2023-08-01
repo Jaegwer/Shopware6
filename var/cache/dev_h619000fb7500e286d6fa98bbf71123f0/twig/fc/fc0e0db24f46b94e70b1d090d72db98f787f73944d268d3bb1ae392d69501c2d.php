@@ -33,7 +33,7 @@ class __TwigTemplate_e089a29c5e58a0e71aead739108be470 extends Template
             'element_image_slider_alignment' => [$this, 'block_element_image_slider_alignment'],
             'element_image_slider_inner' => [$this, 'block_element_image_slider_inner'],
             'last_drop_slider_cms_button_example' => [$this, 'block_last_drop_slider_cms_button_example'],
-            'last_drop_slider_button' => [$this, 'block_last_drop_slider_button'],
+            'last_drop_slider_button_key' => [$this, 'block_last_drop_slider_button_key'],
             'element_image_slider_inner_item' => [$this, 'block_element_image_slider_inner_item'],
             'element_image_slider_controls' => [$this, 'block_element_image_slider_controls'],
             'element_image_slider_controls_items' => [$this, 'block_element_image_slider_controls_items'],
@@ -84,11 +84,13 @@ class __TwigTemplate_e089a29c5e58a0e71aead739108be470 extends Template
 ($context["sliderConfig"] ?? null), "navigationArrows", [], "any", false, false, false, 13), "value", [], "any", false, false, false, 13)) ? (true) : (false)), "autoHeight" => (((sw_get_attribute($this->env, $this->source, sw_get_attribute($this->env, $this->source,         // line 14
 ($context["sliderConfig"] ?? null), "displayMode", [], "any", false, false, false, 14), "value", [], "any", false, false, false, 14) == "standard")) ? (true) : (false))]];
         // line 17
+        echo "\t\t";
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\DumpExtension']->dump($this->env, $context, sw_get_attribute($this->env, $this->source, sw_get_attribute($this->env, $this->source, ($context["sliderConfig"] ?? null), "sliderItems", [], "any", false, false, false, 17), "value", [], "any", false, false, false, 17));
         echo "
         ";
         // line 18
         $this->displayBlock('element_image_slider_alignment', $context, $blocks);
-        // line 106
+        // line 112
         echo "    </div>
 ";
         
@@ -136,16 +138,16 @@ class __TwigTemplate_e089a29c5e58a0e71aead739108be470 extends Template
                     ";
         // line 26
         $this->displayBlock('element_image_slider_inner', $context, $blocks);
-        // line 101
+        // line 107
         echo "                </div>
             ";
-        // line 102
-        if (sw_get_attribute($this->env, $this->source, sw_get_attribute($this->env, $this->source, ($context["config"] ?? null), "verticalAlign", [], "any", false, false, false, 102), "value", [], "any", false, false, false, 102)) {
-            // line 103
+        // line 108
+        if (sw_get_attribute($this->env, $this->source, sw_get_attribute($this->env, $this->source, ($context["config"] ?? null), "verticalAlign", [], "any", false, false, false, 108), "value", [], "any", false, false, false, 108)) {
+            // line 109
             echo "                </div>
             ";
         }
-        // line 105
+        // line 111
         echo "        ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -160,15 +162,13 @@ class __TwigTemplate_e089a29c5e58a0e71aead739108be470 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "element_image_slider_inner"));
 
         // line 27
-        echo "\t\t\t\t\t\t";
-        $this->displayBlock('last_drop_slider_cms_button_example', $context, $blocks);
-        // line 39
-        echo "                        <div class=\"image-slider-container\"
+        echo "
+                        <div class=\"image-slider-container\"
                              data-base-slider-container=\"true\">
                             ";
-        // line 41
+        // line 30
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(sw_get_attribute($this->env, $this->source, sw_get_attribute($this->env, $this->source, ($context["element"] ?? null), "data", [], "any", false, false, false, 41), "sliderItems", [], "any", false, false, false, 41));
+        $context['_seq'] = twig_ensure_traversable(sw_get_attribute($this->env, $this->source, sw_get_attribute($this->env, $this->source, ($context["element"] ?? null), "data", [], "any", false, false, false, 30), "sliderItems", [], "any", false, false, false, 30));
         $context['loop'] = [
           'parent' => $context['_parent'],
           'index0' => 0,
@@ -182,64 +182,72 @@ class __TwigTemplate_e089a29c5e58a0e71aead739108be470 extends Template
             $context['loop']['length'] = $length;
             $context['loop']['last'] = 1 === $length;
         }
-        foreach ($context['_seq'] as $context["_key"] => $context["image"]) {
-            // line 42
+        foreach ($context['_seq'] as $context["key"] => $context["image"]) {
+            // line 31
             echo "
                                 ";
-            // line 43
+            // line 32
             ob_start();
-            // line 44
-            echo "                                    <div class=\"image-slider-item";
-            if ((sw_get_attribute($this->env, $this->source, $context["loop"], "first", [], "any", false, false, false, 44) != true)) {
+            // line 33
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\DumpExtension']->dump($this->env, $context, (($__internal_compile_0 = sw_get_attribute($this->env, $this->source, sw_get_attribute($this->env, $this->source, ($context["sliderConfig"] ?? null), "sliderItems", [], "any", false, false, false, 33), "value", [], "any", false, false, false, 33)) && is_array($__internal_compile_0) || $__internal_compile_0 instanceof ArrayAccess ? ($__internal_compile_0[$context["key"]] ?? null) : null));
+            echo "
+                                    <div class=\"image-slider-item";
+            // line 34
+            if ((sw_get_attribute($this->env, $this->source, $context["loop"], "first", [], "any", false, false, false, 34) != true)) {
                 echo " is-not-first";
             }
             echo " is-";
-            echo sw_escape_filter($this->env, sw_get_attribute($this->env, $this->source, sw_get_attribute($this->env, $this->source, ($context["sliderConfig"] ?? null), "displayMode", [], "any", false, false, false, 44), "value", [], "any", false, false, false, 44), "html", null, true);
+            echo sw_escape_filter($this->env, sw_get_attribute($this->env, $this->source, sw_get_attribute($this->env, $this->source, ($context["sliderConfig"] ?? null), "displayMode", [], "any", false, false, false, 34), "value", [], "any", false, false, false, 34), "html", null, true);
             echo "\"";
-            if ((sw_get_attribute($this->env, $this->source, sw_get_attribute($this->env, $this->source, ($context["sliderConfig"] ?? null), "minHeight", [], "any", false, false, false, 44), "value", [], "any", false, false, false, 44) && (sw_get_attribute($this->env, $this->source, sw_get_attribute($this->env, $this->source, ($context["sliderConfig"] ?? null), "displayMode", [], "any", false, false, false, 44), "value", [], "any", false, false, false, 44) == "cover"))) {
+            if ((sw_get_attribute($this->env, $this->source, sw_get_attribute($this->env, $this->source, ($context["sliderConfig"] ?? null), "minHeight", [], "any", false, false, false, 34), "value", [], "any", false, false, false, 34) && (sw_get_attribute($this->env, $this->source, sw_get_attribute($this->env, $this->source, ($context["sliderConfig"] ?? null), "displayMode", [], "any", false, false, false, 34), "value", [], "any", false, false, false, 34) == "cover"))) {
                 echo " style=\"min-height: ";
-                echo sw_escape_filter($this->env, twig_replace_filter(twig_trim_filter(sw_get_attribute($this->env, $this->source, sw_get_attribute($this->env, $this->source, ($context["sliderConfig"] ?? null), "minHeight", [], "any", false, false, false, 44), "value", [], "any", false, false, false, 44)), [" " => ""]), "html", null, true);
+                echo sw_escape_filter($this->env, twig_replace_filter(twig_trim_filter(sw_get_attribute($this->env, $this->source, sw_get_attribute($this->env, $this->source, ($context["sliderConfig"] ?? null), "minHeight", [], "any", false, false, false, 34), "value", [], "any", false, false, false, 34)), [" " => ""]), "html", null, true);
                 echo "\"";
             }
             echo ">
                                         ";
-            // line 45
-            $context["attributes"] = ["class" => "img-fluid image-slider-image", "alt" => ((sw_get_attribute($this->env, $this->source, sw_get_attribute($this->env, $this->source, sw_get_attribute($this->env, $this->source,             // line 47
-$context["image"], "media", [], "any", false, false, false, 47), "translated", [], "any", false, false, false, 47), "alt", [], "any", false, false, false, 47)) ? (sw_get_attribute($this->env, $this->source, sw_get_attribute($this->env, $this->source, sw_get_attribute($this->env, $this->source, $context["image"], "media", [], "any", false, false, false, 47), "translated", [], "any", false, false, false, 47), "alt", [], "any", false, false, false, 47)) : ("")), "title" => ((sw_get_attribute($this->env, $this->source, sw_get_attribute($this->env, $this->source, sw_get_attribute($this->env, $this->source,             // line 48
-$context["image"], "media", [], "any", false, false, false, 48), "translated", [], "any", false, false, false, 48), "title", [], "any", false, false, false, 48)) ? (sw_get_attribute($this->env, $this->source, sw_get_attribute($this->env, $this->source, sw_get_attribute($this->env, $this->source, $context["image"], "media", [], "any", false, false, false, 48), "translated", [], "any", false, false, false, 48), "title", [], "any", false, false, false, 48)) : (""))];
+            // line 35
+            $this->displayBlock('last_drop_slider_cms_button_example', $context, $blocks);
             // line 50
             echo "
-                                        ";
+\t\t\t\t\t\t\t\t\t\t";
             // line 51
-            if (((sw_get_attribute($this->env, $this->source, sw_get_attribute($this->env, $this->source, sw_get_attribute($this->env, $this->source, ($context["element"] ?? null), "config", [], "any", false, false, false, 51), "displayMode", [], "any", false, false, false, 51), "value", [], "any", false, false, false, 51) == "cover") || (sw_get_attribute($this->env, $this->source, sw_get_attribute($this->env, $this->source, sw_get_attribute($this->env, $this->source, ($context["element"] ?? null), "config", [], "any", false, false, false, 51), "displayMode", [], "any", false, false, false, 51), "value", [], "any", false, false, false, 51) == "contain"))) {
-                // line 52
-                echo "                                            ";
-                $context["attributes"] = twig_array_merge(($context["attributes"] ?? null), ["data-object-fit" => sw_get_attribute($this->env, $this->source, sw_get_attribute($this->env, $this->source, sw_get_attribute($this->env, $this->source, ($context["element"] ?? null), "config", [], "any", false, false, false, 52), "displayMode", [], "any", false, false, false, 52), "value", [], "any", false, false, false, 52)]);
-                // line 53
-                echo "                                        ";
-            }
-            // line 54
+            $context["attributes"] = ["class" => "img-fluid image-slider-image", "alt" => ((sw_get_attribute($this->env, $this->source, sw_get_attribute($this->env, $this->source, sw_get_attribute($this->env, $this->source,             // line 53
+$context["image"], "media", [], "any", false, false, false, 53), "translated", [], "any", false, false, false, 53), "alt", [], "any", false, false, false, 53)) ? (sw_get_attribute($this->env, $this->source, sw_get_attribute($this->env, $this->source, sw_get_attribute($this->env, $this->source, $context["image"], "media", [], "any", false, false, false, 53), "translated", [], "any", false, false, false, 53), "alt", [], "any", false, false, false, 53)) : ("")), "title" => ((sw_get_attribute($this->env, $this->source, sw_get_attribute($this->env, $this->source, sw_get_attribute($this->env, $this->source,             // line 54
+$context["image"], "media", [], "any", false, false, false, 54), "translated", [], "any", false, false, false, 54), "title", [], "any", false, false, false, 54)) ? (sw_get_attribute($this->env, $this->source, sw_get_attribute($this->env, $this->source, sw_get_attribute($this->env, $this->source, $context["image"], "media", [], "any", false, false, false, 54), "translated", [], "any", false, false, false, 54), "title", [], "any", false, false, false, 54)) : (""))];
+            // line 56
             echo "
                                         ";
-            // line 55
+            // line 57
+            if (((sw_get_attribute($this->env, $this->source, sw_get_attribute($this->env, $this->source, sw_get_attribute($this->env, $this->source, ($context["element"] ?? null), "config", [], "any", false, false, false, 57), "displayMode", [], "any", false, false, false, 57), "value", [], "any", false, false, false, 57) == "cover") || (sw_get_attribute($this->env, $this->source, sw_get_attribute($this->env, $this->source, sw_get_attribute($this->env, $this->source, ($context["element"] ?? null), "config", [], "any", false, false, false, 57), "displayMode", [], "any", false, false, false, 57), "value", [], "any", false, false, false, 57) == "contain"))) {
+                // line 58
+                echo "                                            ";
+                $context["attributes"] = twig_array_merge(($context["attributes"] ?? null), ["data-object-fit" => sw_get_attribute($this->env, $this->source, sw_get_attribute($this->env, $this->source, sw_get_attribute($this->env, $this->source, ($context["element"] ?? null), "config", [], "any", false, false, false, 58), "displayMode", [], "any", false, false, false, 58), "value", [], "any", false, false, false, 58)]);
+                // line 59
+                echo "                                        ";
+            }
+            // line 60
+            echo "
+                                        ";
+            // line 61
             ((function () use ($context, $blocks) {
                 $finder = $this->env->getExtension('Shopware\Core\Framework\Adapter\Twig\Extension\NodeExtension')->getFinder();
 
                 $includeTemplate = $finder->find("@Storefront/storefront/utilities/thumbnail.html.twig");
 
-                return $this->loadTemplate($includeTemplate ?? null, "@LastDropSlider/storefront/element/cms-element-last-drop-slider.html.twig", 55);
-            })())->display(twig_array_merge($context, ["media" => sw_get_attribute($this->env, $this->source,             // line 56
-$context["image"], "media", [], "any", false, false, false, 56), "name" => "cms-image-slider-thumbnails"]));
-            // line 58
+                return $this->loadTemplate($includeTemplate ?? null, "@LastDropSlider/storefront/element/cms-element-last-drop-slider.html.twig", 61);
+            })())->display(twig_array_merge($context, ["media" => sw_get_attribute($this->env, $this->source,             // line 62
+$context["image"], "media", [], "any", false, false, false, 62), "name" => "cms-image-slider-thumbnails"]));
+            // line 64
             echo "                                    </div>
                                 ";
             $context["imageElement"] = ('' === $tmp = ob_get_clean()) ? '' : new Markup($tmp, $this->env->getCharset());
-            // line 60
+            // line 66
             echo "
                                 ";
-            // line 61
+            // line 67
             $this->displayBlock('element_image_slider_inner_item', $context, $blocks);
-            // line 74
+            // line 80
             echo "                            ";
             ++$context['loop']['index0'];
             ++$context['loop']['index'];
@@ -251,53 +259,61 @@ $context["image"], "media", [], "any", false, false, false, 56), "name" => "cms-
             }
         }
         $_parent = $context['_parent'];
-        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['image'], $context['_parent'], $context['loop']);
+        unset($context['_seq'], $context['_iterated'], $context['key'], $context['image'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 75
+        // line 81
         echo "                        </div>
 
                         ";
-        // line 77
+        // line 83
         $this->displayBlock('element_image_slider_controls', $context, $blocks);
-        // line 100
+        // line 106
         echo "                    ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
     }
 
-    // line 27
+    // line 35
     public function block_last_drop_slider_cms_button_example($context, array $blocks = [])
     {
         $macros = $this->macros;
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "last_drop_slider_cms_button_example"));
 
-        // line 28
+        // line 36
         echo "
-\t\t\t\t\t\t\t<div class=\"absolute bottom-10  w-full bg-opacity-50 py-4 flex flex-col items-center justify-center \" style=\"right: 7rem;\">
+
+\t\t\t\t\t\t\t<div class=\"absolute bottom-10  w-full bg-opacity-50 py-4 flex flex-col items-center justify-center \">
 \t\t\t\t\t\t\t\t";
-        // line 30
-        $this->displayBlock('last_drop_slider_button', $context, $blocks);
-        // line 37
+        // line 39
+        $this->displayBlock('last_drop_slider_button_key', $context, $blocks);
+        // line 47
         echo "\t\t\t\t\t\t\t</div>
+
 \t\t\t\t\t\t";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
     }
 
-    // line 30
-    public function block_last_drop_slider_button($context, array $blocks = [])
+    // line 39
+    public function block_last_drop_slider_button_key($context, array $blocks = [])
     {
         $macros = $this->macros;
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "last_drop_slider_button"));
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "last_drop_slider_button_key"));
 
-        // line 31
-        echo "\t\t\t\t\t\t\t\t\t<a href=\"#\">
-\t\t\t\t\t\t\t\t\t\t<button class=\"px-4 py-2 border-2 border-inherit text-white absolute\" style=\"z-index: 1000;\">
-\t\t\t\t\t\t\t\t\t\t\tHIER ZUR KOLLEKTION
+        // line 40
+        echo "\t\t\t\t\t\t\t\t<p class=\"text-white text-7xl mb-2\">";
+        echo sw_escape_filter($this->env, sw_get_attribute($this->env, $this->source, (($__internal_compile_1 = sw_get_attribute($this->env, $this->source, sw_get_attribute($this->env, $this->source, ($context["sliderConfig"] ?? null), "sliderItems", [], "any", false, false, false, 40), "value", [], "any", false, false, false, 40)) && is_array($__internal_compile_1) || $__internal_compile_1 instanceof ArrayAccess ? ($__internal_compile_1[($context["key"] ?? null)] ?? null) : null), "content", [], "any", false, false, false, 40), "html", null, true);
+        echo "</p>
+\t\t\t\t\t\t\t\t\t<a href=\"#\">
+\t\t\t\t\t\t\t\t\t\t<button class=\"slider-button bottom-0  px-4 py-2 border-2 border-inherit text-white absolute\">
+\t\t\t\t\t\t\t\t\t\t\t";
+        // line 43
+        echo sw_escape_filter($this->env, sw_get_attribute($this->env, $this->source, (($__internal_compile_2 = sw_get_attribute($this->env, $this->source, sw_get_attribute($this->env, $this->source, ($context["sliderConfig"] ?? null), "sliderItems", [], "any", false, false, false, 43), "value", [], "any", false, false, false, 43)) && is_array($__internal_compile_2) || $__internal_compile_2 instanceof ArrayAccess ? ($__internal_compile_2[($context["key"] ?? null)] ?? null) : null), "buttonLabel", [], "any", false, false, false, 43), "html", null, true);
+        echo "
 \t\t\t\t\t\t\t\t\t\t</button>
 \t\t\t\t\t\t\t\t\t</a>
 \t\t\t\t\t\t\t\t";
@@ -306,43 +322,43 @@ $context["image"], "media", [], "any", false, false, false, 56), "name" => "cms-
 
     }
 
-    // line 61
+    // line 67
     public function block_element_image_slider_inner_item($context, array $blocks = [])
     {
         $macros = $this->macros;
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "element_image_slider_inner_item"));
 
-        // line 62
+        // line 68
         echo "                                    <div class=\"image-slider-item-container\">
                                         ";
-        // line 63
-        if (sw_get_attribute($this->env, $this->source, ($context["image"] ?? null), "url", [], "any", false, false, false, 63)) {
-            // line 64
+        // line 69
+        if (sw_get_attribute($this->env, $this->source, ($context["image"] ?? null), "url", [], "any", false, false, false, 69)) {
+            // line 70
             echo "                                            <a href=\"";
-            echo sw_escape_filter($this->env, sw_get_attribute($this->env, $this->source, ($context["image"] ?? null), "url", [], "any", false, false, false, 64), "html", null, true);
+            echo sw_escape_filter($this->env, sw_get_attribute($this->env, $this->source, ($context["image"] ?? null), "url", [], "any", false, false, false, 70), "html", null, true);
             echo "\"
                                                class=\"image-slider-link\"
                                                ";
-            // line 66
-            if (sw_get_attribute($this->env, $this->source, ($context["image"] ?? null), "newTab", [], "any", false, false, false, 66)) {
+            // line 72
+            if (sw_get_attribute($this->env, $this->source, ($context["image"] ?? null), "newTab", [], "any", false, false, false, 72)) {
                 echo "target=\"_blank\" rel=\"noopener\"";
             }
             echo ">
                                                 ";
-            // line 67
+            // line 73
             echo sw_escape_filter($this->env, ($context["imageElement"] ?? null), "html", null, true);
             echo "
                                             </a>
                                         ";
         } else {
-            // line 70
+            // line 76
             echo "                                            ";
             echo sw_escape_filter($this->env, ($context["imageElement"] ?? null), "html", null, true);
             echo "
                                         ";
         }
-        // line 72
+        // line 78
         echo "                                    </div>
                                 ";
         
@@ -350,84 +366,84 @@ $context["image"], "media", [], "any", false, false, false, 56), "name" => "cms-
 
     }
 
-    // line 77
+    // line 83
     public function block_element_image_slider_controls($context, array $blocks = [])
     {
         $macros = $this->macros;
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "element_image_slider_controls"));
 
-        // line 78
+        // line 84
         echo "                            ";
-        if (sw_get_attribute($this->env, $this->source, sw_get_attribute($this->env, $this->source, ($context["sliderConfig"] ?? null), "navigationArrows", [], "any", false, false, false, 78), "value", [], "any", false, false, false, 78)) {
-            // line 79
+        if (sw_get_attribute($this->env, $this->source, sw_get_attribute($this->env, $this->source, ($context["sliderConfig"] ?? null), "navigationArrows", [], "any", false, false, false, 84), "value", [], "any", false, false, false, 84)) {
+            // line 85
             echo "                                <div class=\"image-slider-controls-container\">
                                     <div class=\"base-slider-controls\"
                                         data-base-slider-controls=\"true\">
                                         ";
-            // line 82
+            // line 88
             $this->displayBlock('element_image_slider_controls_items', $context, $blocks);
-            // line 96
+            // line 102
             echo "                                    </div>
                                 </div>
                             ";
         }
-        // line 99
+        // line 105
         echo "                        ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
     }
 
-    // line 82
+    // line 88
     public function block_element_image_slider_controls_items($context, array $blocks = [])
     {
         $macros = $this->macros;
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "element_image_slider_controls_items"));
 
-        // line 83
+        // line 89
         echo "                                            ";
         $this->displayBlock('element_image_slider_controls_items_arrows', $context, $blocks);
-        // line 95
+        // line 101
         echo "                                        ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
     }
 
-    // line 83
+    // line 89
     public function block_element_image_slider_controls_items_arrows($context, array $blocks = [])
     {
         $macros = $this->macros;
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "element_image_slider_controls_items_arrows"));
 
-        // line 84
+        // line 90
         echo "                                                <button class=\"base-slider-controls-prev image-slider-controls-prev";
-        if ((sw_get_attribute($this->env, $this->source, sw_get_attribute($this->env, $this->source, ($context["sliderConfig"] ?? null), "navigationArrows", [], "any", false, false, false, 84), "value", [], "any", false, false, false, 84) == "outside")) {
+        if ((sw_get_attribute($this->env, $this->source, sw_get_attribute($this->env, $this->source, ($context["sliderConfig"] ?? null), "navigationArrows", [], "any", false, false, false, 90), "value", [], "any", false, false, false, 90) == "outside")) {
             echo " is-nav-prev-outside";
-        } elseif ((sw_get_attribute($this->env, $this->source, sw_get_attribute($this->env, $this->source, ($context["sliderConfig"] ?? null), "navigationArrows", [], "any", false, false, false, 84), "value", [], "any", false, false, false, 84) == "inside")) {
+        } elseif ((sw_get_attribute($this->env, $this->source, sw_get_attribute($this->env, $this->source, ($context["sliderConfig"] ?? null), "navigationArrows", [], "any", false, false, false, 90), "value", [], "any", false, false, false, 90) == "inside")) {
             echo " is-nav-prev-inside";
         }
         echo "\">
                                                     ";
-        // line 85
+        // line 91
         $this->displayBlock('element_image_slider_controls_items_prev_icon', $context, $blocks);
-        // line 88
+        // line 94
         echo "                                                </button>
                                                 <button class=\"base-slider-controls-next image-slider-controls-next";
-        // line 89
-        if ((sw_get_attribute($this->env, $this->source, sw_get_attribute($this->env, $this->source, ($context["sliderConfig"] ?? null), "navigationArrows", [], "any", false, false, false, 89), "value", [], "any", false, false, false, 89) == "outside")) {
+        // line 95
+        if ((sw_get_attribute($this->env, $this->source, sw_get_attribute($this->env, $this->source, ($context["sliderConfig"] ?? null), "navigationArrows", [], "any", false, false, false, 95), "value", [], "any", false, false, false, 95) == "outside")) {
             echo " is-nav-next-outside";
-        } elseif ((sw_get_attribute($this->env, $this->source, sw_get_attribute($this->env, $this->source, ($context["sliderConfig"] ?? null), "navigationArrows", [], "any", false, false, false, 89), "value", [], "any", false, false, false, 89) == "inside")) {
+        } elseif ((sw_get_attribute($this->env, $this->source, sw_get_attribute($this->env, $this->source, ($context["sliderConfig"] ?? null), "navigationArrows", [], "any", false, false, false, 95), "value", [], "any", false, false, false, 95) == "inside")) {
             echo " is-nav-next-inside";
         }
         echo "\">
                                                     ";
-        // line 90
+        // line 96
         $this->displayBlock('element_image_slider_controls_items_next_icon', $context, $blocks);
-        // line 93
+        // line 99
         echo "                                                </button>
                                             ";
         
@@ -435,46 +451,46 @@ $context["image"], "media", [], "any", false, false, false, 56), "name" => "cms-
 
     }
 
-    // line 85
+    // line 91
     public function block_element_image_slider_controls_items_prev_icon($context, array $blocks = [])
     {
         $macros = $this->macros;
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "element_image_slider_controls_items_prev_icon"));
 
-        // line 86
+        // line 92
         echo "                                                        ";
         ((function () use ($context, $blocks) {
             $finder = $this->env->getExtension('Shopware\Core\Framework\Adapter\Twig\Extension\NodeExtension')->getFinder();
 
             $includeTemplate = $finder->find("@Storefront/storefront/utilities/icon.html.twig");
 
-            return $this->loadTemplate($includeTemplate ?? null, "@LastDropSlider/storefront/element/cms-element-last-drop-slider.html.twig", 86);
+            return $this->loadTemplate($includeTemplate ?? null, "@LastDropSlider/storefront/element/cms-element-last-drop-slider.html.twig", 92);
         })())->display(twig_array_merge($context, ["name" => "arrow-head-left"]));
-        // line 87
+        // line 93
         echo "                                                    ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
     }
 
-    // line 90
+    // line 96
     public function block_element_image_slider_controls_items_next_icon($context, array $blocks = [])
     {
         $macros = $this->macros;
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "element_image_slider_controls_items_next_icon"));
 
-        // line 91
+        // line 97
         echo "                                                        ";
         ((function () use ($context, $blocks) {
             $finder = $this->env->getExtension('Shopware\Core\Framework\Adapter\Twig\Extension\NodeExtension')->getFinder();
 
             $includeTemplate = $finder->find("@Storefront/storefront/utilities/icon.html.twig");
 
-            return $this->loadTemplate($includeTemplate ?? null, "@LastDropSlider/storefront/element/cms-element-last-drop-slider.html.twig", 91);
+            return $this->loadTemplate($includeTemplate ?? null, "@LastDropSlider/storefront/element/cms-element-last-drop-slider.html.twig", 97);
         })())->display(twig_array_merge($context, ["name" => "arrow-head-right"]));
-        // line 92
+        // line 98
         echo "                                                    ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -488,7 +504,7 @@ $context["image"], "media", [], "any", false, false, false, 56), "name" => "cms-
 
     public function getDebugInfo()
     {
-        return array (  476 => 92,  467 => 91,  460 => 90,  453 => 87,  444 => 86,  437 => 85,  429 => 93,  427 => 90,  419 => 89,  416 => 88,  414 => 85,  405 => 84,  398 => 83,  391 => 95,  388 => 83,  381 => 82,  374 => 99,  369 => 96,  367 => 82,  362 => 79,  359 => 78,  352 => 77,  344 => 72,  338 => 70,  332 => 67,  326 => 66,  320 => 64,  318 => 63,  315 => 62,  308 => 61,  296 => 31,  289 => 30,  281 => 37,  279 => 30,  275 => 28,  268 => 27,  261 => 100,  259 => 77,  255 => 75,  241 => 74,  239 => 61,  236 => 60,  232 => 58,  230 => 56,  223 => 55,  220 => 54,  217 => 53,  214 => 52,  212 => 51,  209 => 50,  207 => 48,  206 => 47,  205 => 45,  190 => 44,  188 => 43,  185 => 42,  168 => 41,  164 => 39,  161 => 27,  154 => 26,  147 => 105,  143 => 103,  141 => 102,  138 => 101,  136 => 26,  131 => 24,  120 => 22,  108 => 20,  105 => 19,  98 => 18,  90 => 106,  88 => 18,  85 => 17,  83 => 14,  82 => 13,  81 => 12,  80 => 10,  79 => 9,  78 => 8,  77 => 5,  70 => 4,  67 => 3,  64 => 2,  51 => 1,);
+        return array (  492 => 98,  483 => 97,  476 => 96,  469 => 93,  460 => 92,  453 => 91,  445 => 99,  443 => 96,  435 => 95,  432 => 94,  430 => 91,  421 => 90,  414 => 89,  407 => 101,  404 => 89,  397 => 88,  390 => 105,  385 => 102,  383 => 88,  378 => 85,  375 => 84,  368 => 83,  360 => 78,  354 => 76,  348 => 73,  342 => 72,  336 => 70,  334 => 69,  331 => 68,  324 => 67,  313 => 43,  306 => 40,  299 => 39,  290 => 47,  288 => 39,  283 => 36,  276 => 35,  269 => 106,  267 => 83,  263 => 81,  249 => 80,  247 => 67,  244 => 66,  240 => 64,  238 => 62,  231 => 61,  228 => 60,  225 => 59,  222 => 58,  220 => 57,  217 => 56,  215 => 54,  214 => 53,  213 => 51,  210 => 50,  208 => 35,  194 => 34,  190 => 33,  188 => 32,  185 => 31,  168 => 30,  163 => 27,  156 => 26,  149 => 111,  145 => 109,  143 => 108,  140 => 107,  138 => 26,  133 => 24,  122 => 22,  110 => 20,  107 => 19,  100 => 18,  92 => 112,  90 => 18,  85 => 17,  83 => 14,  82 => 13,  81 => 12,  80 => 10,  79 => 9,  78 => 8,  77 => 5,  70 => 4,  67 => 3,  64 => 2,  51 => 1,);
     }
 
     public function getSourceContext()
@@ -509,7 +525,7 @@ $context["image"], "media", [], "any", false, false, false, 56), "name" => "cms-
                 autoHeight: (sliderConfig.displayMode.value == \"standard\") ? true : false
             }
         } %}
-
+\t\t{{dump(sliderConfig.sliderItems.value)}}
         {% block element_image_slider_alignment %}
             {% if config.verticalAlign.value %}
                 <div class=\"cms-element-alignment{% if sliderConfig.verticalAlign.value == \"center\" %} align-self-center{% elseif sliderConfig.verticalAlign.value == \"flex-end\" %} align-self-end{% else %} align-self-start{% endif %}\">
@@ -519,25 +535,31 @@ $context["image"], "media", [], "any", false, false, false, 56), "name" => "cms-
                      data-base-slider-options='{{ baseSliderOptions|json_encode }}'>
 
                     {% block element_image_slider_inner %}
-\t\t\t\t\t\t{% block last_drop_slider_cms_button_example %}
 
-\t\t\t\t\t\t\t<div class=\"absolute bottom-10  w-full bg-opacity-50 py-4 flex flex-col items-center justify-center \" style=\"right: 7rem;\">
-\t\t\t\t\t\t\t\t{% block last_drop_slider_button %}
+                        <div class=\"image-slider-container\"
+                             data-base-slider-container=\"true\">
+                            {% for key, image in element.data.sliderItems %}
+
+                                {% set imageElement %}
+{{dump(sliderConfig.sliderItems.value[key])}}
+                                    <div class=\"image-slider-item{% if loop.first != true %} is-not-first{% endif %} is-{{ sliderConfig.displayMode.value }}\"{% if sliderConfig.minHeight.value and  sliderConfig.displayMode.value == \"cover\" %} style=\"min-height: {{ sliderConfig.minHeight.value|trim|replace({' ':''}) }}\"{% endif %}>
+                                        {% block last_drop_slider_cms_button_example %}
+
+
+\t\t\t\t\t\t\t<div class=\"absolute bottom-10  w-full bg-opacity-50 py-4 flex flex-col items-center justify-center \">
+\t\t\t\t\t\t\t\t{% block last_drop_slider_button_key %}
+\t\t\t\t\t\t\t\t<p class=\"text-white text-7xl mb-2\">{{sliderConfig.sliderItems.value[key].content}}</p>
 \t\t\t\t\t\t\t\t\t<a href=\"#\">
-\t\t\t\t\t\t\t\t\t\t<button class=\"px-4 py-2 border-2 border-inherit text-white absolute\" style=\"z-index: 1000;\">
-\t\t\t\t\t\t\t\t\t\t\tHIER ZUR KOLLEKTION
+\t\t\t\t\t\t\t\t\t\t<button class=\"slider-button bottom-0  px-4 py-2 border-2 border-inherit text-white absolute\">
+\t\t\t\t\t\t\t\t\t\t\t{{sliderConfig.sliderItems.value[key].buttonLabel}}
 \t\t\t\t\t\t\t\t\t\t</button>
 \t\t\t\t\t\t\t\t\t</a>
 \t\t\t\t\t\t\t\t{% endblock %}
 \t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t{% endblock %}
-                        <div class=\"image-slider-container\"
-                             data-base-slider-container=\"true\">
-                            {% for image in element.data.sliderItems %}
 
-                                {% set imageElement %}
-                                    <div class=\"image-slider-item{% if loop.first != true %} is-not-first{% endif %} is-{{ sliderConfig.displayMode.value }}\"{% if sliderConfig.minHeight.value and  sliderConfig.displayMode.value == \"cover\" %} style=\"min-height: {{ sliderConfig.minHeight.value|trim|replace({' ':''}) }}\"{% endif %}>
-                                        {% set attributes = {
+\t\t\t\t\t\t{% endblock %}
+
+\t\t\t\t\t\t\t\t\t\t{% set attributes = {
                                             'class': 'img-fluid image-slider-image',
                                             'alt': (image.media.translated.alt ?: ''),
                                             'title': (image.media.translated.title ?: '')

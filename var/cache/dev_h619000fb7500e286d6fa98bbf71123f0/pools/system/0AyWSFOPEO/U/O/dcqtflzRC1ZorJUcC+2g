@@ -1,0 +1,3 @@
+<?php //%5BC%5DShopware%255CCore%255CFramework%255CLog%255CScheduledTask%255CLogCleanupTask%2523getTaskName
+
+return [PHP_INT_MAX, 1690898041];
