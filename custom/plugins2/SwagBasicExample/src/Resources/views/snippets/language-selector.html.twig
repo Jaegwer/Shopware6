@@ -1,0 +1,9 @@
+{% if languages|length > 1 %}
+   <div class="language-selector">
+      <select name="languageId" class="form-control">
+        {% for language in languages %}
+          <option value="{{ language.id }}">{{ language.name }}</option>
+        {% endfor %}
+      </select>
+   </div>
+{% endif %}

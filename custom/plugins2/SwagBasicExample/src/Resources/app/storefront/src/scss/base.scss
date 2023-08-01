@@ -1,0 +1,384 @@
+$color_1: #ffffff;
+$color_2: #C90000;
+$color_3: #FFFFFF;
+$color_4: #707070;
+$color_5: #6F6F6F;
+$color_6: black;
+$color_7: #222222;
+$color_8: #C1C1C1;
+$color_9: #D6D6D6;
+$color_10: #B9B9B9;
+$font-family_1: "futura-pt-bold", sans-serif;
+$font-family_2: "futura-pt", sans-serif;
+$font-family_3: Helvetica, 'FontAwesome', sans-serif;
+$font-family_4: 'futura-pt-medium', sans-serif;
+$font-family_5: 'Proxima Nova Bold', sans-serif;
+$font-family_6: 'Proxima Nova Medium', sans-serif;
+$font-family_7: 'Proxima Nova Regular', sans-serif;
+$background-color_1: #EC1B24;
+$background-color_2: #0A0A0A;
+$background-color_3: #1B1B1B;
+$background-color_4: white;
+$background-color_5: #121212;
+$background-color_6: #606060;
+$background-color_7: #212121;
+$background-color_8: #2C2C2C;
+$background-color_9: #222222;
+$background-color_10: black;
+$border-color_1: #EC1B24;
+
+@import "https://use.typekit.net/nsg6rpb.css";
+/* @font-face {
+	font-family: 'Futura PT Bold';
+	src: url('../fonts/Futura Pt/FuturaPTBold.ttf') format('opentype');
+
+  } */
+/* @font-face {
+	font-family: 'Futura PT Medium';
+	src: url('../fonts/Futura Pt/FuturaPTMedium.otf') format('opentype');
+
+  }
+@font-face {
+	font-family: 'Futura PT Heavy';
+	src: url('../fonts/Futura Pt/FuturaPTHeavy.otf') format('opentype');
+
+  }
+@font-face {
+	font-family: 'Futura PT Book';
+	src: url('../fonts/Futura Pt/FuturaPTBook.otf') format('opentype');
+
+  }
+@font-face {
+	font-family: 'Proxima Nova Bold';
+	src: url('../fonts/Proxima Nova/Proxima Nova Bold.otf') format('opentype');
+
+  }
+@font-face {
+	font-family: 'Proxima Nova Medium';
+	src: url('../fonts/Proxima Nova/Proxima Nova Medium.otf') format('opentype');
+
+  }
+@font-face {
+	font-family: 'Proxima Nova Regular';
+	src: url('../fonts/Proxima Nova/Proxima Nova Regular.otf') format('opentype');
+
+  } */
+/* Style for the modal overlay */
+/* Style for the modal content */
+/* dropdown */
+* {
+	margin: 0;
+	padding: 0;
+	font-family: $font-family_1;
+	box-sizing: border-box;
+}
+header {
+	background-color: $background-color_1;
+	p {
+		font-family: $font-family_2;
+		font-weight: 700;
+		font-style: normal;
+	}
+}
+nav {
+	background-color: $background-color_2;
+	color: $color_1;
+}
+.sale-red {
+	color: $color_2;
+}
+.medium {
+	a {
+		font-family: $font-family_2;
+		font-weight: 500;
+		font-style: normal;
+	}
+}
+.main-dropdown {
+	background-color: $background-color_3;
+	border: 1px solid #707070;
+	color: $color_3;
+	i {
+		color: $color_4;
+	}
+}
+.dropdown-text {
+	font-family: $font-family_2;
+	font-weight: 500;
+	font-style: normal;
+	font-size: 0.9rem;
+}
+.bold {
+	font-family: $font-family_1;
+}
+#search-box {
+	&::placeholder {
+		font-family: $font-family_2;
+		font-weight: 500;
+		font-style: normal;
+		color: $color_5;
+		background-image: url('../images/search.png');
+		background-repeat: no-repeat;
+		background-position: left center;
+		padding-left: 30px;
+	}
+	color: $color_6;
+}
+.carousel {
+	button {
+		&:hover {
+			background-color: $background-color_4;
+			color: $color_6;
+		}
+	}
+}
+.hover-img {
+	width: 16rem;
+	height: 23rem;
+	background-image: url("/St.-Pauli/assets/images/bestseller1.png");
+	background-size: cover;
+	transition: background-image 0.3s ease;
+	&:hover {
+		background-image: url("/St.-Pauli/assets/images/bestseller3.png");
+	}
+}
+.size-select {
+	button {
+		background-color: $background-color_3;
+	}
+}
+.bg-red {
+	background-color: $background-color_1 !important;
+	border-color: $border-color_1;
+}
+.main-content {
+	background-color: $background-color_5;
+	button {
+		p {
+			font-size: 1.2vw;
+		}
+	}
+}
+.bg-text {
+	font-size: 7.3vw;
+	color: $color_7;
+}
+.zoom-container {
+	position: relative;
+	overflow: hidden;
+	transition: 0.3s ease;
+	background-color: $background-color_9;
+	&:hover {
+		.zoom-in {
+			transform: scale(1.1);
+		}
+	}
+}
+.zoom-in {
+	transition: transform 0.3s ease;
+}
+i {
+	color: $color_1;
+}
+.socials {
+	span {
+		color: $color_1;
+	}
+}
+footer {
+	p {
+		color: $color_8;
+		font-family: $font-family_2 !important;
+		font-weight: 500;
+		font-style: normal;
+	}
+	h4 {
+		color: $color_3;
+	}
+	i {
+		color: $color_8;
+	}
+	background-color: $background-color_7;
+}
+#email {
+	&::placeholder {
+		text-align: center;
+		font-family: $font-family_2;
+		font-weight: 500;
+		font-style: normal;
+		color: $color_5;
+		background-image: url('../images/mail.png');
+		background-repeat: no-repeat;
+		background-position: left center;
+	}
+	width: 90%;
+}
+.side-content {
+	p {
+		font-size: 1.5rem;
+	}
+}
+.sm-text {
+	font-size: 0.6rem;
+}
+.summary {
+	p {
+		color: $color_3;
+		font-size: 0.875rem;
+		line-height: 1.25rem;
+	}
+}
+.mobile {
+	span {
+		font-size: 0.7rem;
+	}
+}
+.mobile-shop {
+	font-size: 2.1vw;
+}
+.impressium-content {
+	background-color: $background-color_5;
+	p {
+		color: $color_9;
+		font-size: 1.2rem;
+	}
+	h2 {
+		color: $color_3;
+		font-size: 2rem;
+	}
+}
+.gray-dot {
+	width: 10px;
+	height: 10px;
+	background-color: $background-color_6;
+	border-radius: 50%;
+}
+.white-dot {
+	width: 10px;
+	height: 10px;
+	background-color: $background-color_4;
+	border-radius: 50%;
+}
+.custom-dropdown {
+	background-color: $background-color_7;
+	position: relative;
+	display: inline-block;
+	select {
+		display: none;
+	}
+	.selected-option {
+		display: flex;
+		align-items: center;
+		padding: 5px;
+		border: 0.5px solid #ccc;
+		cursor: pointer;
+		.custom-content {
+			margin-right: 5px;
+		}
+		.flag-icon {
+			margin-right: 5px;
+		}
+		.chevron-icon {
+			margin-left: auto;
+			transition: transform 0.3s ease-in-out;
+		}
+	}
+	.dropdown-menu {
+		position: absolute;
+		z-index: 10;
+		display: none;
+		border: 0.5px solid #ccc;
+		border-radius: 4px;
+		background-color: $background-color_10;
+		.dropdown-item {
+			padding: 5px;
+			cursor: pointer;
+			display: flex;
+			align-items: center;
+			.flag-icon {
+				margin-right: 5px;
+			}
+		}
+	}
+}
+.fontAwesome {
+	font-family: $font-family_3;
+}
+.sub-text {
+	color: $color_10;
+}
+.bg-card {
+	background-color: $background-color_8;
+}
+.pagination {
+	a {
+		border: 1px solid #707070;
+		color: $color_3;
+	}
+}
+.modal {
+	z-index: 9999;
+}
+.modal-content {
+	max-height: 80vh;
+	overflow-y: auto;
+	p {
+		font-size: 1.1rem;
+	}
+	h1 {
+		font-size: 1.2rem;
+	}
+}
+.bg-bar {
+	background-color: $background-color_6;
+}
+.head-modal {
+	background-color: $background-color_5;
+}
+.gray-text {
+	color: $color_9;
+	font-family: $font-family_2 !important;
+	font-weight: 400;
+	font-style: normal;
+	font-size: 1.2rem;
+}
+.card-img {
+	span {
+		font-family: $font-family_4;
+	}
+}
+.font-book {
+	font-family: $font-family_2 !important;
+	font-weight: 400;
+	font-style: normal;
+}
+.font-md {
+	font-family: $font-family_2;
+	font-weight: 500;
+	font-style: normal;
+}
+.font-nova-bold {
+	font-family: $font-family_5 !important;
+}
+.font-nova-md {
+	font-family: $font-family_6 !important;
+}
+.font-nova-rg {
+	font-family: $font-family_7 !important;
+}
+.custom-dropdown.open {
+	.selected-option {
+		.chevron-icon {
+			transform: rotate(180deg);
+		}
+	}
+	.dropdown-menu {
+		display: block;
+	}
+}
+.mobile-stick {
+	margin-top: -0.9rem;
+}
+#myNav {
+	z-index: 100;
+}

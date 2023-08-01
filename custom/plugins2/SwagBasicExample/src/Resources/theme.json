@@ -1,0 +1,45 @@
+{
+  "name": "SwagBasicExample",
+  "author": "Shopware AG",
+  "views": [
+     "@Storefront",
+     "@Plugins",
+     "@SwagBasicExample"
+  ],
+  "style": [
+    "app/storefront/src/scss/overrides.scss",
+    "@Storefront",
+    "app/storefront/src/scss/base.scss"
+  ],
+  "script": [
+    "@Storefront",
+    "app/storefront/dist/storefront/js/swag-basic-example.js"
+  ],
+  "asset": [
+    "@Storefront",
+    "app/storefront/src/assets"
+  ],
+  "config":{
+	"blocks":{
+		"themeColors":{
+			"label":{
+				"de-DE": "Theme-Farben",
+                "en-GB": "Theme colors"
+			}
+		}
+	}
+  },
+  "fields":{
+	"email":{
+		"label": {
+			"de-DE": "Kontakt Email-Adresse",
+			"en-GB": "Contact email address"
+		},
+		"type": "text",
+		"value": "contact@example.com",
+		"scss": false,
+		"editable": true,
+		"block": "GeneralBlock"
+	}
+  }
+}

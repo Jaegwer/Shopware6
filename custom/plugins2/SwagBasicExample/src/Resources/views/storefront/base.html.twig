@@ -1,0 +1,64 @@
+{% block base_doctype %}
+<!DOCTYPE html>
+{% endblock %}
+
+{% block base_html %}
+<html lang="{{ app.request.locale }}"
+      itemscope="itemscope"
+      itemtype="https://schema.org/WebPage">
+{% endblock %}
+{% block stylesheets %}
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.16/tailwind.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+{% endblock %}
+{% block base_head %}
+    {% sw_include '@Storefront/storefront/layout/meta.html.twig' %}
+{% endblock %}
+{% block base_body_inner %}
+{% block base_header %}
+    <header>
+                {% sw_include '@Storefront/storefront/layout/header/header.html.twig' %}
+    </header>
+{% endblock %}
+{% block base_navigation %}
+            <div class="nav-main">
+                {% block base_navigation_inner %}
+                    {% sw_include '@Storefront/storefront/layout/navigation/navigation.html.twig' %}
+                {% endblock %}
+            </div>
+        {% endblock %}
+{% endblock %}
+{% block base_main %}
+            <main class="content-main">
+                {% block base_flashbags %}
+                    <div class="flashbags container">
+                        {% for type, messages in app.flashes %}
+                            {% sw_include '@Storefront/storefront/utilities/alert.html.twig' with { type: type, list: messages } %}
+                        {% endfor %}
+                    </div>
+                {% endblock %}
+
+                {% block base_main_inner %}
+                    <div class="">
+                        {% block base_main_container %}
+                            <div class="container-main">
+                                {% block base_breadcrumb %}
+                                    {% sw_include '@Storefront/storefront/layout/breadcrumb.html.twig' with {
+
+                                    } only %}
+                                {% endblock %}
+
+                                {% block base_content %}{% endblock %}
+                            </div>
+                        {% endblock %}
+                    </div>
+                {% endblock %}
+            </main>
+        {% endblock %}
+ {% block base_footer %}
+            <footer class="footer-main">
+                {% block base_footer_inner %}
+                    {% sw_include '@Storefront/storefront/layout/footer/footer.html.twig' %}
+                {% endblock %}
+            </footer>
+        {% endblock %}

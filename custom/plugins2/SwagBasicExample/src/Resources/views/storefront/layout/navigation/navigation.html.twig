@@ -1,0 +1,100 @@
+{% block layout_main_navigation %}
+
+	<div class="main-navigation" id="mainNavigation" data-flyout-menu="true">
+		{% block layout_main_navigation_navbar %}
+			<div class="">
+				{% block layout_main_navigation_menu %}
+					<nav class="nav main-navigation-menu p-4 grid grid-cols-2 gap-36" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+					<ul class="flex justify-around items-end medium">
+					{% set homeLabel = context.salesChannel.translated.homeName|default("general.homeLink"|trans) %}
+						{% block layout_main_navigation_menu_home %}
+							{% sw_include '@Storefront/storefront/layout/navigation/logo.html.twig' %}
+						{% endblock %}
+
+						{% block layout_main_navigation_menu_items %}
+							{% set activePath = page.header.navigation.active.path %}
+
+							{% for treeItem in page.header.navigation.tree %}
+								{% set category = treeItem.category %}
+								{% set name = category.translated.name %}
+
+								{% block layout_main_navigation_menu_item %}
+									{% if category.type == 'folder' %}
+										<div class="nav-link" {% if treeItem.children|length > 0 %} data-flyout-menu-trigger="{{ category.id }}" {% endif %} title="{{ name }}">
+											<div class="main-navigation-link-text">
+												<span itemprop="name">{{ name }}</span>
+
+											</div>
+										</div>
+									{% else %}
+									<li>
+										<a class="nav-link {% if category.id == page.header.navigation.active.id or category.id in activePath %} active{% endif %}" href="{{ category_url(category) }}" itemprop="url" {% if treeItem.children|length > 0 %} data-flyout-menu-trigger="{{ category.id }}" {% endif %} {% if category_linknewtab(category) %} target="_blank" {% endif %} title="{{ name }}">
+											<div class="main-navigation-link-text">
+												<span itemprop="name">{{ name }}</span>
+											</div>
+										</a>
+										</li>
+									{% endif %}
+								{% endblock %}
+							{% endfor %}
+						{% endblock %}
+                    </ul>
+					<div class="">
+			<ul class="flex justify-evenly items-center text-black">
+				<li>
+					<input class="w-80" id="search-box" placeholder=" Wonach Suchst Du?" type="text" />
+				</li>
+				<li>
+					{% sw_include '@Storefront/storefront/layout/navigation/actions/language-widget.html.twig' %}
+				</li>
+				<li>
+						<img src="{{ asset('bundles/swagbasicexample/8324223_ui_essential_app_avatar_profile_icon (1).png', 'asset') }}">
+				</li>
+				<li>
+					<a class="relative inline-flex items-center flow-root" href="">
+						<img src="{{ asset('bundles/swagbasicexample/shop.png', 'asset') }}">
+						<div
+							class="absolute inline-flex items-center justify-center w-4 h-4 text-xs font-bold text-white bg-red-500 rounded-full -top-1 -right-1">
+							3
+						</div>
+					</a>
+				</li>
+			</ul>
+		</div>
+					</nav>
+				{% endblock %}
+			</div>
+		{% endblock %}
+
+		{% block layout_main_navigation_menu_flyout_wrapper %}
+			{% set navigationChildrenCount = 0 %}
+			{% for treeItem in page.header.navigation.tree %}
+				{% if treeItem.category.childCount > 0 %}
+					{% set navigationChildrenCount = navigationChildrenCount + 1 %}
+				{% endif %}
+			{% endfor %}
+
+			{% if navigationChildrenCount > 0 %}
+				{% block layout_main_navigation_menu_flyout_container %}
+					<div class="navigation-flyouts">
+						{% block layout_main_navigation_menu_flyouts %}
+							{% for treeItem in page.header.navigation.tree %}
+								{% if treeItem.children|length > 0 %}
+									{% block layout_main_navigation_menu_flyout %}
+										<div class="navigation-flyout" data-flyout-menu-id="{{ treeItem.category.id }}">
+											<div class="sub-menu">
+												{% block layout_main_navigation_menu_flyout_include %}
+													{% sw_include '@Storefront/storefront/layout/navigation/flyout.html.twig' with {navigationTree: treeItem, level: level+1, page: page} only %}
+												{% endblock %}
+											</div>
+										</div>
+									{% endblock %}
+								{% endif %}
+							{% endfor %}
+						{% endblock %}
+					</div>
+				{% endblock %}
+			{% endif %}
+		{% endblock %}
+	</div>
+{% endblock %}
